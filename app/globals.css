@@ -31,3 +31,10 @@ body {
     text-wrap: balance;
   }
 }
+
+.backgoundBlur {
+  background: linear-gradient(36deg, rgba(49,51,56,1) 0%, rgba(6,123,194,1) 100%);
+}
+.backgoundBlur2 {
+  background: linear-gradient(90deg, rgb(177, 182, 193) 0%, rgb(42, 68, 84) 100%);
+}
