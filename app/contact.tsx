@@ -52,7 +52,7 @@ const Contact = (props: Props) => {
                 transition={{ duration: 1, delay:1}} 
                 onClick={() => setOpen(!open)} 
                 className='border px-4 bg-black/20 hover:scale-110 cursor-pointer hover:bg-black/60 rounded-xl duration-500 ease-in-out'>
-                <div className='font-semibold text-lg p-4'>
+                <div className='font-semibold  p-4'>
                     Get in touch with us.
                 </div>
             </motion.div>
@@ -64,32 +64,25 @@ const Contact = (props: Props) => {
                     <div className='w-full flex flex-end justify-end'>
                         <motion.div 
                         
-                        initial={open ? 
-                            {opacity: 0, scale: 0.2 } :
-                            {opacity: 0, scale: 0.2 } }
-                        animate={ open ?
-                            {opacity: 0, scale: 1 } : 
-                            {opacity: 1, scale: 1 } } 
-                        transition={{ duration : 2}}
                         className={ `  px-4 rounded-3xl transition-all duration-300 ease-in-out [450px] shadow-2xl   flex  justify-end  relative items-center 
-                            ${open ? 'backgoundBlur2' : 'bg-black/20 shadow-xl bg-opacity-15' }`}    >
+                            ${open ? 'backgoundBlur2' : 'bg-black/30 shadow-xl bg-opacity-15' }`}    >
                                 {loading && (
                                     <div className='w-full   absolute top-0 rounded-t-3xl right-0 backdrop-blur-lg z-20 bg-green-400/40 rounded-sm flex justify-center items-center  h-[10%]'>
-                                            <h2 className='text-xl font-bold'>Thank you for messaging us.</h2>
+                                            <h2 className='font-bold'>Thank you for messaging us.</h2>
                                     </div>
                                 )}
                                 <form onSubmit={handleSubmit}
                                     // animate={open ? {opacity: 0, y:-80 } : { opacity: 1, y:0 }} transition={{ duration: 1, }} 
                                     className={'h-fit  w-[450px] flex flex-col gap-4 px-4'}>
                                         <div className='py-4'>
-                                            <h2 className='font-bold text-2xl'>Write us a message.</h2>
+                                            <h2 className='font-bold '>Write us a message.</h2>
                                         </div>
                                         <div className='w-full relative overflow-hidden h-full  '>
                                             <motion.div  
                                                 animate={open ? {opacity: 0, x: 400 } : { opacity: 1, x:0 }} transition={{ duration: 1}}
                                                 className='flex flex-col gap-2'>
                                                 <div
-                                                className='font-light text-lg border border-white/40 p-2 bg-black/10 shadow-2xl cursor-pointer hover:bg-black/60 rounded-xl duration-500 ease-in-out'>
+                                                className='text-sm border border-white/40 p-2 bg-black/10 shadow-2xl cursor-pointer hover:bg-black/60 rounded-xl duration-500 ease-in-out'>
                                                 <input  type="text" name="name"   onChange={() => handleChange} onClick={(e)=> handleClick('name', e)} placeholder='Full Name' className='w-full placeholder:font-semibold p-2 outline-none bg-transparent'/>
                                                     
                                                 </div>
@@ -103,7 +96,7 @@ const Contact = (props: Props) => {
                                                 >
                                                 {/* <label className='font-semibold text-white text-xl tracking-wider'>Full Name</label> */}
                                                     <div
-                                                className='font-light text-lg border border-white/40 p-2 bg-black/10 shadow-2xl  cursor-pointer hover:bg-black/60 rounded-xl '>
+                                                className='text-sm border border-white/40 p-2 bg-black/10 shadow-2xl  cursor-pointer hover:bg-black/60 rounded-xl '>
                                                         <input  type="text" name="email" required  onChange={() => handleChange} onClick={(e)=> handleClick('name', e)} placeholder='Email' className='w-full placeholder:font-semibold p-2 required:border-red-500   outline-none bg-transparent'/>
                                                     </div>
                                                 {errors.email && <span className="error">{errors.email}</span>}
@@ -112,7 +105,7 @@ const Contact = (props: Props) => {
                                         <div className='w-full relative overflow-hidden h-full  '>
                                             <motion.div   
                                                 animate={open ? {opacity: 0, y: 100 } : { opacity: 1, y:0 }} transition={{ duration: 1}}                             
-                                                    className='font-light text-lg border border-white/40 p-2 bg-black/10 shadow-2xl hover:scale-110 cursor-pointer hover:bg-black/60 rounded-xl '>                                        
+                                                    className='text-sm border border-white/40 p-2 bg-black/10 shadow-2xl hover:scale-110 cursor-pointer hover:bg-black/60 rounded-xl '>                                        
                                                 <textarea  name="message"  onChange={() => handleChange} onClick={(e)=> handleClick('name', e)} placeholder='Message' className='w-full placeholder:font-semibold p-2 outline-none bg-transparent'/>
                                                 {errors.message && <span className="error">{errors.message}</span>}
                                             </motion.div>
@@ -122,7 +115,7 @@ const Contact = (props: Props) => {
                                                 animate={open ? {opacity: 0, y: 100 } : { opacity: 1, x:0 }} transition={{ duration: 1, }}       
                                                 className=''>
                                                     <button onSubmit={() => handleSubmit} 
-                                                    className='transition-all border-blue-500 border-2 w-full text-center text-2xl font-bold p-4 hover:bg-opacity-80 rounded-xl cursor-pointer hover:bg-black/50 '>
+                                                    className='transition-all border-blue-500 border-2 w-full text-center text-sm font-bold p-4 hover:bg-opacity-80 rounded-xl cursor-pointer hover:bg-black/50 '>
                                                         Send
                                                     </button>
                                             </motion.div>
